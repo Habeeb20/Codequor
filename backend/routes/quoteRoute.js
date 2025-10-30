@@ -2,7 +2,7 @@
 import express from "express";
 import Quote from "../models/quoteModel.js";
 import sendEmail from "../middlewares/sendEmail.js";
-
+import { protect } from "../middlewares/protect.js";
 const router = express.Router();
 
 // POST: Submit Quote
@@ -70,5 +70,20 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
+
+
+router.post("/reply", protect, async (req, res) => {
+  const { email, message } = req.body;
+  const html = `
+    <h3>Reply from CodeQuor</h3>
+    <p>${message}</p>
+    <hr>
+    <small>CodeQuor Team</small>
+  `;
+  await sendEmail(email, "We've Replied to Your Message", html);
+  res.json({ success: true });
+});
+
+
 
 export default router;
