@@ -2,31 +2,34 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
-
+import bluewave from "../assets/bluewave.png"
+import academy from "../assets/footbal Acedemy.png"
+import weeltin from "../assets/weeltin.png"
+import weeltin2 from "../assets/weeltin2.png"
 const ProjectsSection = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'React + Node.js full-stack solution with AI recommendations.',
+      title: 'Blue wave travels and tour',
+      description: 'A full stack software solution for a travel Agency',
       tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
-      live: 'https://example.com',
+      image: bluewave,
+      live: 'https://bluewavestravelsandtours.com/',
       github: 'https://github.com',
     },
     {
-      title: 'Healthcare Dashboard',
-      description: 'Real-time patient monitoring system with secure API.',
+      title: 'Act sport Di oyibo football Academy',
+      description: 'A website for a football Academy ',
       tech: ['Vue.js', 'Python', 'PostgreSQL', 'Docker'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-      live: 'https://example.com',
+      image: academy,
+      live: 'https://actsportsdoyibo.com/',
       github: 'https://github.com',
     },
     {
-      title: 'FinTech Mobile App',
-      description: 'Cross-platform banking app with biometric login.',
+      title: 'wheelitin',
+      description: 'A UK based software that connects Auto specialists to clients',
       tech: ['React Native', 'Firebase', 'Redux', 'Figma'],
-      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop',
-      live: 'https://example.com',
+      image: weeltin,
+      live: 'https://wheelitin.taskflow.com.ng/',
       github: 'https://github.com',
     },
   ];
@@ -97,7 +100,7 @@ const ProjectsSection = () => {
                 </p>
 
                 {/* Tech Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                {/* <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tag, i) => (
                     <span
                       key={i}
@@ -106,7 +109,7 @@ const ProjectsSection = () => {
                       {tag}
                     </span>
                   ))}
-                </div>
+                </div> */}
 
                 {/* Links */}
                 <div className="flex gap-4">
@@ -118,14 +121,14 @@ const ProjectsSection = () => {
                   >
                     <FaExternalLinkAlt /> Live Demo
                   </a>
-                  <a
+                  {/* <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-gray-600 hover:text-gray-900 font-medium transition-colors"
                   >
                     <FaGithub /> Code
-                  </a>
+                  </a> */}
                 </div>
               </div>
 

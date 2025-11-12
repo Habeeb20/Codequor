@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 
 
@@ -18,7 +19,12 @@ import {
 import { Link } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import axios from "axios";
-
+import bluewave from "../assets/bluewave2.png"
+import academy from "../assets/footballAcedemy2.png"
+import weeltin from "../assets/weeltin2.png"
+import weeltin2 from "../assets/weeltin.png"
+import bluewave2 from "../assets/bluewave.png"
+import  football2 from "../assets/footbal Acedemy.png"
 const ServicesSection = () => {
   const [showModal, setShowModal] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
@@ -204,24 +210,110 @@ const ServicesSection = () => {
           </motion.div>
 
           {/* Featured Projects */}
+               {/* Featured Projects */}
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="mt-24">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
               Projects That <span className="text-[#1065c0]">Deliver Results</span>
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {projects.map((proj, i) => (
-                <motion.div key={i} whileHover={{ scale: 1.03 }} className="bg-white rounded-xl overflow-hidden shadow-md">
-                  <img src={proj.image} alt={proj.title} className="w-full h-48 object-cover" />
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">{proj.title}</h3>
-                    <p className="text-sm text-gray-600 mb-3">{proj.client}</p>
-                    <p className="text-[#1065c0] font-medium">Result: {proj.result}</p>
-                  </div>
-                </motion.div>
-              ))}
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
+              {/* Project 1: BlueWave */}
+              <motion.div
+                whileHover={{ y: -8 }}
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+              >
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={bluewave}
+                    alt="BlueWave Travel Platform"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <img
+                    src={bluewave2}
+                    alt="BlueWave Dashboard"
+                    className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+
+                <div className="p-6 bg-gradient-to-b from-white to-gray-50">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">BlueWave – Smart Travel Agency Platform</h3>
+                  <p className="text-sm text-gray-600 mb-3">Travel Tech Solutions Ltd</p>
+                  <p className="text-[#1065c0] font-semibold text-sm leading-relaxed">
+                    A full-stack travel booking system with real-time flight, hotel, and tour management. Enabled 300+ agents to process bookings 4× faster with automated invoicing and CRM.
+                  </p>
+                  {/* <div className="mt-4 flex items-center gap-2 text-xs text-gray-500">
+                    <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full">React + Node.js</span>
+                    <span className="px-2 py-1 bg-indigo-100 text-indigo-700 rounded-full">Stripe & Paystack</span>
+                  </div> */}
+                </div>
+              </motion.div>
+
+              {/* Project 2: Weeltin */}
+              <motion.div
+                whileHover={{ y: -8 }}
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+              >
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={weeltin}
+                    alt="Weeltin Auto Marketplace"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <img
+                    src={weeltin2}
+                    alt="Weeltin Client Dashboard"
+                    className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+
+                <div className="p-6 bg-gradient-to-b from-white to-gray-50">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Weeltin – UK Auto Specialist Network</h3>
+                  <p className="text-sm text-gray-600 mb-3">AutoConnect UK</p>
+                  <p className="text-[#1065c0] font-semibold text-sm leading-relaxed">
+                    A B2B marketplace connecting vehicle owners with verified mechanics across the UK(United Kingdom). Features smart matching, live quotes, and secure payments — now serving 12,000+ users.
+                  </p>
+                  {/* <div className="mt-4 flex items-center gap-2 text-xs text-gray-500">
+                    <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full">Next.js + Supabase</span>
+                    <span className="px-2 py-1 bg-teal-100 text-teal-700 rounded-full">Google Maps API</span>
+                  </div> */}
+                </div>
+              </motion.div>
+
+              {/* Project 3: Football Academy */}
+              <motion.div
+                whileHover={{ y: -8 }}
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+              >
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={academy}
+                    alt="Football Academy Website"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <img
+                    src={football2}
+                    alt="Academy Training Dashboard"
+                    className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+
+                <div className="p-6 bg-gradient-to-b from-white to-gray-50">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Elite Football Academy – Player Management</h3>
+                  <p className="text-sm text-gray-600 mb-3">ProKick Academy</p>
+                  <p className="text-[#1065c0] font-semibold text-sm leading-relaxed">
+                    A modern academy portal for scouting, training schedules, performance tracking, and parent communication. Reduced admin time by 70% and increased enrollment by 42%.
+                  </p>
+                  {/* <div className="mt-4 flex items-center gap-2 text-xs text-gray-500">
+                    <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full">React + Firebase</span>
+                    <span className="px-2 py-1 bg-pink-100 text-pink-700 rounded-full">Video Analysis</span>
+                  </div> */}
+                </div>
+              </motion.div>
             </div>
           </motion.div>
-
           {/* CTA */}
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.6 }} className="text-center mt-20">
             <p className="text-gray-700 mb-6 text-lg">
